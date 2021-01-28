@@ -27,6 +27,7 @@
   <artefactFormat>
     <height unit=""></height>
     <width unit=""></width>
+		<depth unit=""></depth>
     <diameter unit=""></diameter>
     <circumference unit=""></circumference>
   </artefactFormat>
