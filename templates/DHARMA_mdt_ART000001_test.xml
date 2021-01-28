@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE artefactMetadataTemplate SYSTEM "DHARMA_mdt_artefactDTD.dtd">
+<artefactMetadataTemplate>
+<resourceManagement>
+	<resourceID digitalID=""/>
+	<metadataOrigin>Corpus des inscriptions du Campa</metadataOrigin>
+	<metadataEditor>
+		<creation who="Arlo Griffiths" when=""/><!-- may be repeated -->
+		<creation who="Amandine Lepoutre" when=""/>
+	</metadataEditor>
+	<metadataContribution>
+		<change who="Adeline Levivier" when="2021-01-28" status="transforming in XML"></change><!-- may be repeated -->
+	</metadataContribution>
+	<metadataReview who="" when=""/><!-- may be repeated -->
+	<project>DHARMA</project>
+	<corpus>CIC</corpus>
+	<metadataRights target="CC0 1.0"/>
+</resourceManagement>
+<artefactDescription>
+  <artefactID idno="ART000001"/>
+  <compositeArtefactID idno=""/>
+  <material value="sandstone"/><!-- may be repeated -->
+  <artefactType value="doorjamb"/><!-- may be repeated -->
+  <decoDesc>
+		<decoration value="none"/><!-- may be repeated -->
+    <decorationRemarks><p></p></decorationRemarks>
+  </decoDesc>
+  <artefactFormat>
+    <height unit="cm">163</height>
+    <width unit="cm">31</width>
+		<depth unit="cm">34</depth>
+    <diameter unit="cm"></diameter>
+    <circumference unit="cm"></circumference>
+  </artefactFormat>
+	<lettering>
+		<letteringTechnique value="engraved"/>
+		<textHeight unit="cm"></textHeight>
+		<textWidth unit="cm"></textWidth>
+		<linesNumber>A: 21</linesNumber>
+		<linesNumber>B: 20</linesNumber>
+		<glyphHeight unit="cm"></glyphHeight>
+		<glyphWidth unit="cm"></glyphWidth>
+		<letteringRemarks><p></p></letteringRemarks>
+	</lettering>
+	<copperplateFormat>
+		<copperplateWeight unit="cm"></copperplateWeight>
+		<copperplateWeightOther unit="g"></copperplateWeightOther>
+		<bindingHole number=""/>
+		<sealPreservation value="no"/><!-- only if the seal is on the plate, in case of a set of copper-plates, all the information about the seal has to be describded at the composite artefact level -->
+		<sealingTechnique value="not_applicable"/>
+		<sealHeight unit="cm"></sealHeight>
+		<sealWidth unit="cm"></sealWidth>
+	</copperplateFormat>
+	<condition value="unknown"/>
+	<artefactHistory><p></p></artefactHistory>
+	<originPlace>
+		<originPlaceName>Phan Rang</originPlaceName>
+		<originPlaceID idno="PLC00001"/>
+		<originPlaceRemarks><p></p></originPlaceRemarks>
+	</originPlace>
+	<discoveryPlace>
+		<discoveryPlaceName>Phan Rang</discoveryPlaceName>
+		<discoveryPlaceID idno="PLC00001"/>
+		<discoveryCoordinates></discoveryCoordinates>
+		<discoveryEvents type="find" when="notAfter1888"><p>This doorjamb was found before 1888, when it was first mentioned in the literature</p></discoveryEvents>
+		<discoveryEvents type="observed" when="notAfter1909"><p>At the beginning of the 20th century, it was observed at the Phan Rang residence. Like the architectural elements bearing C. 3, C. 5, C. 6 and C. 7, this one was later identified as belonging to a group of vestiges, found in the rice-fields of the Catholic Mission, to which the designation sanctuaire de Svayamutpanna was applied (: 77).</p></discoveryEvents>
+	</discoveryPlace>
+	<preservationPlace>
+		<preservationPlaceName>Museum of Vietnamese History in Ho Chi Minh City</preservationPlaceName>
+		<inventoryNumber>LSb 21166</inventoryNumber>
+		<inventoryNumber>B 2, 15</inventoryNumber><!-- may be repeated -->
+		<preservationPlaceID idno="COL00001"/>
+		<preservationCoordinates></preservationCoordinates>
+		<inSituStatus value="no"/>
+		<preservationEvents when="1910" type="move"><p>When the inscriptions of Campā were moved from the Saigon Museum to the EFEO Museum in Hanoi in 1910, the collection was completed by other inscriptions regarded as being of outstanding importance for the history of Campā. The doorjamb bearing C. 4 was one of them (: 2).</p></preservationEvents>
+		<preservationEvents when="1915" type="inventory"><p>Its inventory number at the Museum was published in : 9-10. whence, in the inventory of Campā inscriptions published in 1923, this local number was included under the entry</p></preservationEvents>
+		<preservationEvents when="notBefore2009" type="observed"><p>We identified the stone in the Bảo Tàng Lịch Sử Việt Nam (National Museum of Vietnamese History) at Hanoi in 2009 and following years, as the one bearing inventory number.</p></preservationEvents>
+		<preservationEvents when="2011" type="move"><p>The Museum assumed the new name Bảo Tàng Lịch Sử Quốc Gia (National Museum of History) in 2011, but this did not entail a change in the inventory number.</p></preservationEvents>
+	</preservationPlace>
+	<artefactRights>
+		<governmentalHolder>Ministry of Culture, Sports and Tourism</governmentalHolder>
+		<institutionalHolder>Museum of Vietnamese History in Ho Chi Minh City</institutionalHolder>
+		<artefactDistributionRights target="All rights reserved"/>
+	</artefactRights>
+	<relatedResources>
+		<textID idno="INSCIC000004"/><!-- may be repeated -->
+		<surrogateID idno="SUR000001"/><!-- may be repeated -->
+		<imageID idno="DHARMA_ART000001_001.jpg"/><!-- may be repeated -->
+	</relatedResources>
+</artefactDescription>
+</artefactMetadataTemplate>
