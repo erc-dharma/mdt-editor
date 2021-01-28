@@ -18,15 +18,15 @@
       <!ELEMENT change (#PCDATA)>
       <!ATTLIST change
       who CDATA #REQUIRED><!-- ajouter un pointeur vers la liste des membres du projet -->
-      <!ATTLIST change 
+      <!ATTLIST change
       when CDATA #REQUIRED
     status CDATA #REQUIRED><!-- ajouter les valeurs possibles pour le workflow -->
-       
+
     <!ELEMENT metadataReview EMPTY>
     <!ATTLIST metadataReview
     who CDATA #REQUIRED
     when CDATA #REQUIRED>
-    
+
     <!ELEMENT project (#PCDATA)>
     <!ELEMENT corpus (#PCDATA)>
     <!ELEMENT metadataRights EMPTY>
@@ -49,60 +49,64 @@
   <!ATTLIST material value (unknown|valeur1|valeur2|...) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
 
-    
+
   <!ELEMENT artefactType EMPTY>
   <!--AJ:je bouge la déclarartion de l'occurence.  -->
   <!ATTLIST artefactType
   value (unknown|valeur1|valeur2|...) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
-  
+
   <!ELEMENT decoDesc (decoration+,decorationRemarks)>
     <!ELEMENT decoration EMPTY>
     <!ATTLIST decoration
     value (none|valeur1|valeur2|...) "none"><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
-    
+
     <!ELEMENT decorationRemarks (p?)>
       <!ELEMENT p (#PCDATA)>
-      
-  <!ELEMENT artefactFormat (height+,width+,diameter+,circumference)>
+
+  <!ELEMENT artefactFormat (height+,width+,depth+,diameter+,circumference)>
     <!ELEMENT height (#PCDATA)>
-    <!ATTLIST height 
+    <!ATTLIST height
     unit (m|cm) "cm">
-    
+
     <!ELEMENT width (#PCDATA)>
-    <!ATTLIST width 
+    <!ATTLIST width
     unit (m|cm) "cm">
-    
+
+    <!ELEMENT depth (#PCDATA)>
+    <!ATTLIST depth
+    unit (m|cm) "cm">
+
     <!ELEMENT diameter (#PCDATA)>
-    <!ATTLIST diameter 
-    unit (m|cm) "cm"> 
-    
+    <!ATTLIST diameter
+    unit (m|cm) "cm">
+
     <!ELEMENT circumference (#PCDATA)>
-    <!ATTLIST circumference 
-    unit (m|cm) "cm"> 
-    
+    <!ATTLIST circumference
+    unit (m|cm) "cm">
+
   <!ELEMENT lettering (letteringTechnique,textHeight+,textWidth+,linesNumber,glyphHeight+,glyphWidth+,letteringRemarks)>
     <!ELEMENT letteringTechnique EMPTY>
-    <!ATTLIST letteringTechnique 
+    <!ATTLIST letteringTechnique
     value (engraved | relief | painted | unknown) "unknown"><!-- liste à revoir -->
-    
+
     <!ELEMENT textHeight (#PCDATA)>
-    <!ATTLIST textHeight 
-    unit (m|cm) "cm"> 
-    
+    <!ATTLIST textHeight
+    unit (m|cm) "cm">
+
     <!ELEMENT textWidth (#PCDATA)>
-   <!ATTLIST textWidth 
+   <!ATTLIST textWidth
    unit (m|cm) "cm">
-    
+
     <!ELEMENT linesNumber (#PCDATA)>
     <!ELEMENT glyphHeight (#PCDATA)>
-   <!ATTLIST glyphHeight 
+   <!ATTLIST glyphHeight
     unit (m|cm) "cm">
-    
+
     <!ELEMENT glyphWidth (#PCDATA)>
-      <!ATTLIST glyphWidth 
+      <!ATTLIST glyphWidth
      unit (m|cm) "cm">
-    
+
     <!ELEMENT letteringRemarks (p)>
       <!--<!ELEMENT p (#PCDATA)>-->
   <!ELEMENT copperplateFormat (copperplateWeight, copperplateWeightOther?, bindingHole, sealPreservation, sealingTechnique, sealHeight, sealWidth)>
@@ -112,41 +116,41 @@
     >
     <!ELEMENT copperplateWeightOther (#PCDATA)>
     <!-- AJ: il n'y a pas copperplateWeightOther dans le template seulement copperplateWeight -->
-    <!ATTLIST copperplateWeightOther 
+    <!ATTLIST copperplateWeightOther
      unit (kg|g) "g">
-    
+
     <!ELEMENT bindingHole EMPTY>
     <!ATTLIST bindingHole
     number CDATA #REQUIRED>
-    
+
     <!ELEMENT sealPreservation EMPTY>
     <!ATTLIST sealPreservation
     value (yes|no) "yes">
-    
+
     <!ELEMENT sealingTechnique EMPTY>
    <!ATTLIST sealingTechnique value (seal_stamped_onto_body_of_plate|seal_stamped_onto_binding_ring|seal_stamped_onto_plate_projection|seal_stamped_into_other_seal|seal-like_engraving_into_artefact|unknown|not_applicable) "not_applicable"><!-- liste à définir -->
-    
+
     <!ELEMENT sealHeight (#PCDATA)>
-    <!ATTLIST sealHeight 
+    <!ATTLIST sealHeight
     unit (m | cm) "cm">
-    
+
     <!ELEMENT sealWidth (#PCDATA)>
-    <!ATTLIST sealWidth 
+    <!ATTLIST sealWidth
     unit (m | cm) "cm">
-    
+
   <!ELEMENT condition EMPTY>
   <!ATTLIST condition
   value (intact_and_complete|intact_and_incomplete|fragmented_and_complete|fragmented_and_incomplete|unknown) "unknown"> <!-- liste à revoir -->
-  
+
   <!ELEMENT artefactHistory (p)>
    <!-- <!ELEMENT p (#PCDATA)>-->
-    
+
   <!ELEMENT originPlace (originPlaceName,originPlaceID,originPlaceRemarks)>
     <!ELEMENT originPlaceName (#PCDATA)>
     <!ELEMENT originPlaceID EMPTY>
     <!ATTLIST originPlaceID
     idno ID #REQUIRED>
-    
+
     <!ELEMENT originPlaceRemarks (p)>
   <!--    <!ELEMENT p (#PCDATA)>-->
   <!ELEMENT discoveryPlace (discoveryPlaceName,discoveryPlaceID,discoveryCoordinates,discoveryEvents)>
@@ -154,14 +158,14 @@
     <!ELEMENT discoveryPlaceID EMPTY>
     <!ATTLIST discoveryPlaceID
     idno ID #REQUIRED>
-    
+
     <!ELEMENT discoveryCoordinates (#PCDATA)>
     <!ELEMENT discoveryEvents (p)>
     <!ATTLIST discoveryEvents
     type (excavation|find|survey|purchase|unknown) "unknown"
     when CDATA #REQUIRED>
     <!-- liste à revoir -->
-    
+
       <!--<!ELEMENT p (#PCDATA)>-->
   <!ELEMENT preservationPlace (preservationPlaceName,inventoryNumber+,preservationPlaceID,preservationCoordinates,inSituStatus?,preservationEvents)>
     <!ELEMENT preservationPlaceName (#PCDATA)>
@@ -174,12 +178,12 @@
     <!ELEMENT inSituStatus EMPTY>
     <!ATTLIST inSituStatus
     value (yes|no) "no">
-    
+
     <!ELEMENT preservationEvents (p)>
     <!ATTLIST preservationEvents
     type (acquisition|move|destruction) "move"
      when CDATA #REQUIRED>
-     
+
     <!--  <!ELEMENT p (#PCDATA)>-->
   <!ELEMENT artefactRights (governmentalHolder,institutionalHolder,artefactDistributionRights)>
     <!ELEMENT governmentalHolder (#PCDATA)>
