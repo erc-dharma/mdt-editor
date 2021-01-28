@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE DHARMA_mdt_INSCIC00004_test SYSTEM "DHARMA_mdt_textDTD.dtd">
+<textMetadataTemplate>
+<resourceManagement>
+	<resourceID digitalID=""/>
+	<metadataOrigin>Corpus des inscriptions du Campa</metadataOrigin>
+	<metadataEditor>
+		<creation who="Arlo Griffiths" when=""/><!-- may be repeated -->
+		<creation who="Amandine Lepoutre" when=""/>
+	</metadataEditor>
+	<metadataContribution>
+		<change who="Adeline Levivier" when="2021-01-28" status="transforming in XML"></change><!-- may be repeated -->
+	</metadataContribution>
+	<metadataReview who="" when=""/><!-- may be repeated -->
+	<project>DHARMA</project>
+	<corpus>CIC</corpus>
+	<metadataRights target="CC0 1.0"/>
+</resourceManagement>
+<textDescription>
+  <textID idno="INSCIC00004"/>
+	<alternativeID>C. 4</alternativeID><!-- may be repeated -->
+	<textDesignation>Doorjamb from Phan Rang</textDesignation>
+	<alternativeDesignation></alternativeDesignation><!-- may be repeated -->
+  <textType value="donation"/><!-- may be repeated -->
+  <linesNumber>41</linesNumber>
+	<textLanguage value="Sanskrit"/><!-- may be repeated -->
+	<textScript value="Kawi"/><!-- may be repeated -->
+	<textDate>
+	<dateRegnalYear>
+		<ruler></ruler>
+		<year></year>
+		<month></month>
+		<fortnight></fornight>
+		<day></day>
+		<remark></remark>
+	</dateRegnalYear>
+	<date calendar="Saka"><!-- may be repeated --><!-- the calendar has to be declared in the attribute calendar -->
+		<year>1148</year>
+		<month></month>
+		<fortnight></fornight>
+		<day></day>
+		<remark></remark>
+	</date>
+	<dateJovianCycle>
+		<cycleName></cycleName>
+		<month></month>
+		<fortnight></fornight>
+		<day></day>
+		<remark></remark>
+	</dateJovianCycle>
+	<origDate notBefore="1226" notAfter="1227" when="" precision="high" evidence="internal_date" datingMethod="gregorian">1226/7</origDate><!-- equivalence of the date according to the occidental calendar -->
+	</textDate>
+	<textFiliation>
+		<duplicateText>
+		<duplicateTextID>
+			<ID></ID>
+			<corpus></corpus>
+			<reference></reference>
+		</duplicateTextID><!-- may be repeated -->
+		</duplicateText>
+		<reissue>
+		<textReissue value="no"/>
+		<reissueTextID>
+			<ID></ID>
+			<corpus></corpus>
+			<reference></reference>
+		</reissueTextID><!-- may be repeated -->
+		<reissueDate when=""/>
+	</reissue>
+	</textFiliation>
+  <textSummary><p></p></textSummary>
+	<keywords><!-- may be repeated -->
+		<term></term>
+	</keywords>
+	<textRemarks><p></p></textRemarks>
+	<textRights>
+		<publicationProject>DHARMA</publicationProject>
+		<textDistributionRights target="CC BY 4.0"/>
+	</textRights>
+	<relatedResources>
+		<artefactID idno="ART000001"/><!-- may be repeated -->
+		<surrogateID idno="SUR000001"/><!-- may be repeated -->
+		<imageID idno="DHARMA_INSCIC00004_001.jpg"/><!-- may be repeated -->
+	</relatedResources>
+</textDescription>
+</textMetadataTemplate>

@@ -44,38 +44,38 @@
   <!ELEMENT alternativeDesignation (#PCDATA)>
   <!ELEMENT textType EMPTY>
   <!ATTLIST textType
-  value (unknown|valeur1|valeur2) "unknown"
+  value (unknown|donation|dedication) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT linesNumber (#PCDATA)>
   <!ELEMENT textLanguage EMPTY>
   <!ATTLIST textLanguage
-  value (unknown|valeur1|valeur2) "unknown"
+  value (unknown|Tamil|Sanskrit) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT textScript EMPTY>
   <!ATTLIST textScript
- value (unknown|valeur1|valeur2) "unknown"
+ value (unknown|Kawi|Batak) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT textDate (dateRegnalYear,date,dateJovianCycle,origDate)>
-    <!ELEMENT dateRegnalYear (ruler,year,month,fornight,day,remark)>
+    <!ELEMENT dateRegnalYear (ruler,year*,month*,fornight*,day*,remark*)>
       <!ELEMENT ruler (#PCDATA)>
       <!ELEMENT year (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>
       <!ELEMENT remark (#PCDATA)>
     <!ELEMENT date (year,month,fornight,day,remark)>
     <!ATTLIST date
     calendar (Saka|Gupta|Valabhi|Vikrama|Burmese|Sanjaya|Other|Unknown) "Saka"
     ><!-- liste à revoir -->
-      <!ELEMENT year (#PCDATA)>
+      <!--<!ELEMENT year (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
-      <!ELEMENT day (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
+      <!ELEMENT day (#PCDATA)>-->
     <!ELEMENT dateJovianCycle (cycleName,month,fornight,day,remark)>
       <!ELEMENT cycleName (#PCDATA)>
-      <!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
-      <!ELEMENT day (#PCDATA)>
+      <!--<!ELEMENT month (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
+      <!ELEMENT day (#PCDATA)>-->
     <!ELEMENT origDate (#PCDATA)>
     <!ATTLIST origDate
     notBefore CDATA #REQUIRED
