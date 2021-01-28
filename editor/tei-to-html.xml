@@ -1,0 +1,388 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                xmlns:x="https://github.com/erc-dharma/mdt-editor"
+                xmlns:my="https://github.com/chchch/tst"
+                exclude-result-prefixes="x my">
+<xsl:output method="html" encoding="UTF-8" omit-xml-declaration="yes"/>
+
+<xsl:template name="splitlist">
+    <xsl:param name="list"/>
+    <xsl:param name="nocapitalize"/>
+    <xsl:param name="mss" select="$list"/>
+    <xsl:param name="map"/>
+
+    <xsl:if test="string-length($mss)">
+        <xsl:if test="not($mss=$list)">, </xsl:if>
+        <xsl:variable name="splitted" select="substring-before(
+                                    concat($mss,' '),
+                                  ' ')"/>
+        <xsl:variable name="liststr">
+            <xsl:choose>
+                <xsl:when test="$map">
+                    <xsl:variable name="test" select="document('')/*/*[name() = $map]/my:entry[@key=$splitted]"/>
+                    <xsl:choose>
+                        <xsl:when test="$test"> <xsl:value-of select="$test"/> </xsl:when>
+                        <xsl:otherwise> <xsl:value-of select="$splitted"/> </xsl:otherwise>
+                    </xsl:choose>
+               </xsl:when>
+                <xsl:otherwise>
+                <xsl:value-of select="$splitted"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$nocapitalize = 'true'">
+                <xsl:value-of select="$liststr"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="capitalize">
+                    <xsl:with-param name="str" select="$liststr"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:call-template name="splitlist">
+            <xsl:with-param name="mss" select=
+                "substring-after($mss, ' ')"/>
+            <xsl:with-param name="nocapitalize" select="$nocapitalize"/>
+            <xsl:with-param name="map" select="$map"/>
+        </xsl:call-template>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template name="capitalize">
+    <xsl:param name="str"/>
+    <xsl:variable name="LowerCase" select="'abcdefghijklmnopqrstuvwxyz'"/>
+    <xsl:variable name="UpperCase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
+    <xsl:value-of select="translate(
+      substring($str,1,1),
+      $LowerCase,
+      $UpperCase
+      )"/>
+    <xsl:value-of select="substring($str,2,string-length($str)-1)"/>
+</xsl:template>
+
+<my:rights>
+    <my:entry key="CC_0">CC0 1.0 Universal</my:entry>
+</my:rights>
+
+<xsl:template match="x:textMetadataTemplate">
+    <xsl:element name="div">
+        <xsl:attribute name="id">recordcontainer</xsl:attribute>
+        <xsl:attribute name="lang">en</xsl:attribute>
+        <xsl:element name="div">
+            <xsl:attribute name="class">record-fat</xsl:attribute>
+            <!--div id="topbar">
+                <div id="transbutton" title="change script">A</div>
+                <form>
+                    <button type="button" id="editbutton">Edit</button>
+                    <button type="button" id="saveas">Save As...</button>
+                </form>
+            </div-->
+            <xsl:element name="article">
+                <!--xsl:element name="h2">
+                    <xsl:attribute name="class">warning</xsl:attribute>
+                    <xsl:text>This is a preview. Please remember to save.</xsl:text>
+                </xsl:element-->
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:element>
+</xsl:template>
+
+<xsl:template name="lang">
+    <xsl:if test="@xml:lang">
+        <xsl:attribute name="lang"><xsl:value-of select="@xml:lang"/></xsl:attribute>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template name="repeat">
+    <xsl:param name="output" />
+    <xsl:param name="count" />
+    <xsl:if test="$count &gt; 0">
+        <xsl:value-of select="$output" />
+        <xsl:call-template name="repeat">
+            <xsl:with-param name="output" select="$output" />
+            <xsl:with-param name="count" select="$count - 1" />
+        </xsl:call-template>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="x:textDescription">
+    <xsl:element name="section">
+        <xsl:call-template name="lang"/>
+        <xsl:apply-templates select="x:textDesignation"/>
+        <xsl:element name="table">
+            <xsl:element name="tbody">
+                <xsl:apply-templates select="x:textID/@idno"/>
+                <xsl:apply-templates select="x:textID/x:alternativeID"/>
+                <xsl:apply-templates select="x:textID/x:alernativeDesignation"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:element>
+    <h3>Text Description</h3>
+    <xsl:element name="section">
+        <xsl:element name="table">
+            <xsl:element name="tbody">
+                <xsl:apply-templates select="x:textType"/>
+                <xsl:apply-templates select="x:linesNumber"/>
+                <xsl:apply-templates select="x:textLanguage"/>
+                <xsl:apply-templates select="x:textScript"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:element>
+    <h3>Text Date</h3>
+    <xsl:apply-templates select="x:textDate"/>
+    <h3>Text Filiation</h3>
+    <xsl:apply-templates select="x:textFiliation"/>
+    <h3>Text Summary</h3>
+    <xsl:apply-templates select="x:textSummary"/>
+    <h3>Keywords</h3>
+    <xsl:apply-templates select="x:keywords"/>
+    <h3>Text Remarks</h3>
+    <xsl:apply-templates select="x:textRemarks"/>
+    <h3>Text Rights</h3>
+    <xsl:apply-templates select="x:textRights"/>
+    <h3>Related Resources</h3>
+    <xsl:apply-templates select="x:relatedResources"/>
+</xsl:template>
+
+<xsl:template match="x:linesNumber">
+    <tr>
+        <th>Lines number</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:textLanguage">
+    <tr>
+        <th>Text Language</th>
+        <td><xsl:value-of select="@value"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:textScript">
+    <tr>
+        <th>Text Script</th>
+        <td><xsl:value-of select="@value"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:textDate">
+    <xsl:element name="section">
+        <xsl:element name="table">
+            <xsl:element name="tbody">
+                <xsl:apply-templates select="x:dateRegnalYear"/>
+                <xsl:apply-templates select="x:date"/>
+                <xsl:apply-templates select="x:dateJovianCycle"/>
+                <xsl:apply-templates select="x:origDate"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:element>
+</xsl:template>
+
+<xsl:template match="x:textFiliation">
+    <xsl:element name="section">
+        <xsl:element name="table">
+            <xsl:element name="tbody">
+                <xsl:apply-templates select="x:duplicateText"/>
+                <xsl:apply-templates select="x:reissue"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:element>
+</xsl:template>
+
+<xsl:template match="x:duplicateText">
+    <tr><th colspan="2">Duplicate Text</th></tr>
+    <xsl:apply-templates select="x:duplicateTextID"/>
+</xsl:template>
+<xsl:template match="x:duplicateTextID">
+    <tr>
+        <th>ID</th>
+        <td><xsl:apply-templates select="x:ID"/></td>
+    </tr>
+    <tr>
+        <th>corpus</th>
+        <td><xsl:apply-templates select="x:corpus"/></td>
+    </tr>
+    <tr>
+        <th>reference</th>
+        <td><xsl:apply-templates select="x:reference"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:reissue">
+    <tr><th colspan="2">Reissue</th></tr>
+    <tr>
+        <th>Reissue</th>
+        <td><xsl:value-of select="x:textReissue/@value"/></td>
+    </tr>
+    <xsl:apply-templates select="x:reissueTextID"/>
+    <tr>
+        <th>Reissue date</th>
+        <td><xsl:value-of select="x:reissueDate/@when"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:reissueTextID">
+    <tr>
+        <th>ID</th>
+        <td><xsl:apply-templates select="x:ID"/></td>
+    </tr>
+    <tr>
+        <th>corpus</th>
+        <td><xsl:apply-templates select="x:corpus"/></td>
+    </tr>
+    <tr>
+        <th>reference</th>
+        <td><xsl:apply-templates select="x:reference"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:textSummary">
+    <p><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match="x:keywords">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:keywords/x:item">
+    <xsl:apply-templates/>
+    <xsl:if test="not(position() = last())">
+        <xsl:text>, </xsl:text>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="x:textRemarks">
+    <p><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match="x:textRights">
+    <xsl:apply-templates/>
+</xsl:template>
+<xsl:template match="x:publicationProject">
+    <tr>
+        <th>Publication Project</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:textDistributionRights">
+    <tr>
+        <th>Text Distribution Rights</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:relatedResources">
+    <xsl:apply-templates/>
+</xsl:template>
+<xsl:template match="x:relatedResources/x:artefactID">
+    <tr>
+        <th>Artefact ID</th>
+        <td><xsl:value-of select="@idno"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:relatedResources/x:surrogateID">
+    <tr>
+        <th>Surrogate ID</th>
+        <td><xsl:value-of select="@idno"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:relatedResources/x:imageID">
+    <tr>
+        <th>Image ID</th>
+        <td><xsl:value-of select="@idno"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:textDesignation">
+    <h1><xsl:apply-templates/></h1>
+</xsl:template>
+
+<xsl:template match="x:textID/@idno">
+    <tr>
+        <th>ID</th>
+        <td><xsl:value-of select="."/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:alternativeID">
+    <tr>
+        <th>Alternative ID</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:alternativeDesignation">
+    <tr>
+        <th>Alternative Designation</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:textType">
+    <tr>
+        <th>Text Type</th>
+        <td><xsl:value-of select="@value"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:resourceManagement">
+    <xsl:element name="table">
+        <xsl:attribute name="class">metadata</xsl:attribute>
+        <xsl:element name="tbody">
+            <tr><th>Metadata Edition</th></tr>
+            <xsl:apply-templates select="x:metadataEditor/x:change"/>
+            <tr><th>Metadata Contribution</th></tr>
+            <xsl:apply-templates select="x:metadataContribution/x:change"/>
+            <tr><th>Metadata Review</th></tr>
+            <xsl:apply-templates select="x:metadataReview"/>
+            <xsl:apply-templates select="x:project"/>
+            <xsl:apply-templates select="x:corpus"/>
+            <xsl:apply-templates select="x:metadataRights"/>
+        </xsl:element>
+    </xsl:element>
+</xsl:template>
+
+<xsl:template match="x:change">
+    <tr>
+        <td><xsl:value-of select="@when"/></td>
+        <td><xsl:value-of select="@who"/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:metadataReview">
+    <tr>
+        <td><xsl:value-of select="@when"/></td>
+        <td><xsl:value-of select="@who"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:metadataContribution/x:change">
+    <tr>
+        <td><xsl:value-of select="@when"/></td>
+        <td><xsl:value-of select="@who"/></td>
+        <td><xsl:value-of select="@status"/></td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="x:project">
+    <tr>
+        <th>Project</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:corpus">
+    <tr>
+        <th>Corpus</th>
+        <td><xsl:apply-templates/></td>
+    </tr>
+</xsl:template>
+<xsl:template match="x:metadataRights">
+    <tr>
+        <th>Rights</th>
+        <td>
+            <xsl:call-template name="splitlist">
+                <xsl:with-param name="list" select="@target"/>
+                <xsl:with-param name="nocapitalize">true</xsl:with-param>
+                <xsl:with-param name="map">my:rights</xsl:with-param>
+            </xsl:call-template>
+        </td>
+    </tr>
+</xsl:template>
+
+</xsl:stylesheet>

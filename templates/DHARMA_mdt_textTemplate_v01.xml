@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE textMetadataTemplate SYSTEM "DHARMA_mdt_textDTD.dtd">
-<textMetadataTemplate>
+<textMetadataTemplate xmlns="https://github.com/erc-dharma/mdt-editor">
 <resourceManagement>
 	<resourceID digitalID=""/>
 	<metadataOrigin></metadataOrigin>
@@ -11,9 +11,9 @@
 		<change who="" when="" status=""></change><!-- may be repeated -->
 	</metadataContribution>
 	<metadataReview who="" when=""/><!-- may be repeated -->
-	<project></project>
+	<project>DHARMA</project>
 	<corpus></corpus>
-	<metadataRights target=""/>
+	<metadataRights target="CC_0"/>
 </resourceManagement>
 <textDescription>
   <textID idno=""/>
@@ -29,25 +29,25 @@
 		<ruler></ruler>
 		<year></year>
 		<month></month>
-		<fornight></fornight>
+		<fortnight></fortnight>
 		<day></day>
 		<remark></remark>
 	</dateRegnalYear>
 	<date calendar=""><!-- may be repeated --><!-- the calendar has to be declared in the attribute calendar -->
 		<year></year>
 		<month></month>
-		<fornight></fornight>
+		<fortnight></fortnight>
 		<day></day>
 		<remark></remark>
 	</date>
 	<dateJovianCycle>
 		<cycleName></cycleName>
 		<month></month>
-		<fornight></fornight>
+		<fortnight></fortnight>
 		<day></day>
 		<remark></remark>
 	</dateJovianCycle>
-	<origDate notBefore="" notAfter="" when="" precision="" evidence="" datingMethod=""></origDate><!-- equivalence of the date according to the occidental calendar -->
+	<origDate notBefore="" notAfter="" when="" precision="" evidence="" datingMethod="gregorian"></origDate><!-- equivalence of the date according to the occidental calendar -->
 	</textDate>
 	<textFiliation>
 		<duplicateText>

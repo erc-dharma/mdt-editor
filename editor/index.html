@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DHARMA Editor</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<link rel="stylesheet" href="../lib/tufte.css">
+<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="lib/codemirror/addon/lint/lint.css">
+<link rel="stylesheet" href="lib/vanillaSelectBox.css">
+
+<link rel="stylesheet" href="../lib/tst.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/addon/hint/show-hint.js"></script>
+<script src="lib/codemirror/addon/hint/xml-hint.js"></script>
+<script src="lib/codemirror/addon/lint/htmlhint.js"></script>
+<script src="lib/codemirror/addon/lint/lint.js"></script>
+<script src="lib/codemirror/addon/lint/xml-lint.js"></script>
+<script src="lib/codemirror/mode/xml/xml.js"></script>
+<script src="lib/codemirror/addon/display/placeholder.js"></script>
+
+<script src="lib/vanillaSelectBox.js"></script>
+
+<script src="../lib/hypher-nojquery.js"></script>
+<script src="../lib/sa.js"></script>
+<script src="../lib/ta.js"></script>
+<script src="../lib/ta-Latn.js"></script>
+<script src="../lib/sanscript.js"></script>
+<script src="../lib/viewpos.js"></script>
+<!--script src="../lib/transliterate.js"></script-->
+
+<script src="lib/localforage.min.js"></script>
+<script src="lib/FileSaver.min.js"></script>
+
+<script src="lib/he.js"></script>
+
+<script src="script.js"></script>
+</head>
+
+<body lang="en">
+<div id="assets" style="position: absolute; visibility: hidden">
+<svg id="trash" enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="trash"><path clip-rule="evenodd" d="M29.98,6.819c-0.096-1.57-1.387-2.816-2.98-2.816h-3v-1V3.001   c0-1.657-1.344-3-3-3H11c-1.657,0-3,1.343-3,3v0.001v1H5c-1.595,0-2.885,1.246-2.981,2.816H2v1.183v1c0,1.104,0.896,2,2,2l0,0v17   c0,2.209,1.791,4,4,4h16c2.209,0,4-1.791,4-4v-17l0,0c1.104,0,2-0.896,2-2v-1V6.819H29.98z M10,3.002c0-0.553,0.447-1,1-1h10   c0.553,0,1,0.447,1,1v1H10V3.002z M26,28.002c0,1.102-0.898,2-2,2H8c-1.103,0-2-0.898-2-2v-17h20V28.002z M28,8.001v1H4v-1V7.002   c0-0.553,0.447-1,1-1h22c0.553,0,1,0.447,1,1V8.001z" fill="#333333" fill-rule="evenodd"/><path clip-rule="evenodd" d="M9,28.006h2c0.553,0,1-0.447,1-1v-13c0-0.553-0.447-1-1-1H9   c-0.553,0-1,0.447-1,1v13C8,27.559,8.447,28.006,9,28.006z M9,14.005h2v13H9V14.005z" fill="#333333" fill-rule="evenodd"/><path clip-rule="evenodd" d="M15,28.006h2c0.553,0,1-0.447,1-1v-13c0-0.553-0.447-1-1-1h-2   c-0.553,0-1,0.447-1,1v13C14,27.559,14.447,28.006,15,28.006z M15,14.005h2v13h-2V14.005z" fill="#333333" fill-rule="evenodd"/><path clip-rule="evenodd" d="M21,28.006h2c0.553,0,1-0.447,1-1v-13c0-0.553-0.447-1-1-1h-2   c-0.553,0-1,0.447-1,1v13C20,27.559,20.447,28.006,21,28.006z M21,14.005h2v13h-2V14.005z" fill="#333333" fill-rule="evenodd"/></g></svg>
+</div>
+<div id="headerviewer" class="recordcontainer">
+</div>
+
+<div id="headereditor" class="recordcontainer">
+<div class="record-fat">
+<article>
+<section>
+    <h2>Metadata Management</h2>
+    <div>
+        <label>Metadata Origin</label>
+        <input autocomplete="off" type="text" name="metadata_origin" data-select="resourceManagement > metadataOrigin" placeholder="XX">
+    </div>
+    <h4>Metadata edition</h4>
+    <div class="multiple" data-select="resourceManagement > metadataEditor > creation">
+        <div class="multi-item">
+            <div> 
+                <label>Who</label>
+                <input autocomplete="off" type="text" name="metadata_edition_who" data-multi-attr="who" placeholder="Name of editor" required>
+                <label>When</label>
+                <input autocomplete="off" type="date" name="metadata_edition_when" data-multi-attr="when" placeholder="Date of edition" required>
+            </div>
+        </div>
+    </div>
+    <h4>Revision History/Modification</h4>
+    <div class="multiple" data-select="resourceManagement > metadataEditor > metadataContribution > change">
+        <div class="multi-item">
+            <div>
+                <label>Who</label>
+                <input autocomplete="off" type="text" name="revision_history_who" data-multi-attr="who" placeholder="lds project" required>
+                <label>When</label>
+                <input autocomplete="off" type="date" name="revision_history_when" data-multi-attr="when" placeholder="Date of edition" required>
+                <select required autocomplete="off" name="revision_history_status" data-multi-attr="status">
+                    <option value="draft">draft</option>
+                    <option value="candidate">candidate</option>
+                    <option value="approved">approved</option>
+                    <option value="published">published</option>
+                </select>
+            </div>
+            <div>
+                <input autocomplete="off" type="text" name="revision_history" data-multi-select=":scope" placeholder="Description of change" required>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Project</label>
+        <input autocomplete="off" type="text" name="metadata_project" data-select="resourceManagement > project" readonly>
+        <label>Corpus<label>
+        <select required autocomplete="off" name="metadata_corpus" data-select="resourceManagement > corpus">
+            <option value="CEC">CEC</option>
+            <option value="Khmer_corpus">Khmer corpus</option>
+            <option value="Pallava">Pallava</option>
+        </select>
+    </div>
+    <div>
+        <label>License</label>
+        <select autocomplete="off" type="text" name="metadata_rights" data-select="resourceManagement > metadataRights" data-attr="target" disabled>
+            <option value="CC_0">CC0 1.0 Universal</option>
+        </select>
+    </div>
+    <h2>Text Description</h2>
+    <div>
+        <label>Text ID</label>
+        <input autocomplete="off" type="text" name="text_ID" data-select="textDescription > textID" data-attr="idno" required>
+    </div>
+    <div>
+        <label>Alternative ID</label>
+        <div class="multiple" data-select="textDescription > alternativeID">
+            <div class="multi-item">
+                <div>
+                    <input autocomplete="off" type="text" name="alternativeID" data-multi-select=":scope">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Text Designation</label>
+        <input autocomplete="off" type="text" name="textDesignation" data-select="textDescription > textDesignation" required>
+    </div>
+    <div>
+        <label>Alternative Designation</label>
+        <div class="multiple" data-select="textDescription > alternativeDesignation">
+            <div class="multi-item">
+            `   <div>
+                    <input autocomplete="off" type="text" name="alternativeDesignation" data-multi-select=":scope">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Lines Number</label>
+        <input autocomplete="off" type="number" step="1" min="0" data-select="textDescription > linesNumber" required>
+        <label>Text Type</label>
+        <select autocomplete="off" class="multiselect" name="textType" data-select="textDescription > textType" data-attr="value" multiple required>
+            <option value="manuscript"> manuscript</option>
+            <option value="inscription"> inscription</option>
+        </select>
+        <label>Text Language</label>
+        <select autocomplete="off" class="multiselect" name="textLanguage" data-select="textDescription > textLanguage" data-attr="value" multiple required>
+            <option value="tamil"> Tamil</option>
+            <option value="sanskrit"> Sanskrit</option>
+        </select>
+        <label>Text Script</label>
+        <select autocomplete="off" class="multiselect" name="textScript" data-select="textDescription > textScript" data-attr="value" multiple required>
+            <option value="tamil"> Tamil</option>
+            <option value="sanskrit"> Nagari</option>
+        </select>
+    </div>
+    <h2>Date</h2>
+    <h3>Regnal Year</h3>
+    <div class="multiple" data-select="textDescription > textDate > dateRegnalYear">
+        <div class="multi-item">
+        `   <div>
+                <label>Ruler</label>
+                <input autocomplete="off" type="text" name="regnal_year_ruler" data-multi-select="ruler">
+            </div>
+            <div>
+                <label>Year</label>
+                <input autocomplete="off" type="number" step="1" name="regnal_year_year" data-multi-select="year">
+                <label>Month</label>
+                <input autocomplete="off" type="number" step="1" name="regnal_year_month" data-multi-select="month">
+                <label>Fortnight</label>
+                <input autocomplete="off" type="number" step="1" name="regnal_year_fortnight" data-multi-select="fortnight">
+                <label>Day</label>
+                <input autocomplete="off" type="number" step="1" name="regnal_year_day" data-multi-select="day">
+            </div>
+            <div>
+                <label>Remark</label>
+                <input autocomplete="off" type="text" name="regnal_year_remark" data-multi-select="remark">
+            </div>
+        </div>
+    </div>
+    <h3>Date</h3>
+    <div class="multiple" data-select="textDescription > textDate > date">
+        <div class="multi-item">
+        `   <div>
+                <label>Calendar</label>
+                <select autocomplete="off" name="date_calendar" data-multi-attr="calendar">
+                    <option value="" disabled selected></option>
+                    <option value="gregorian">Gregorian</option>
+                    <option value="saka">Śaka Samvat</option>
+                    <option value="vikrama">Vikrama Samvat</option>
+                </select>
+            </div>
+            <div>
+                <label>Year</label>
+                <input autocomplete="off" type="number" step="1" name="date_year" data-multi-select="year">
+                <label>Month</label>
+                <input autocomplete="off" type="number" step="1" name="date_month" data-multi-select="month">
+                <label>Fortnight</label>
+                <input autocomplete="off" type="number" step="1" name="date_fortnight" data-multi-select="fortnight">
+                <label>Day</label>
+                <input autocomplete="off" type="number" step="1" name="date_day" data-multi-select="day">
+            </div>
+            <div>
+                <label>Remark</label>
+                <input autocomplete="off" type="text" name="date_remark" data-multi-select="remark">
+            </div>
+        </div>
+    </div>
+    <h3>Jovian Cycle</h3>
+    <div class="multiple" data-select="textDescription > textDate > dateJovianCycle">
+        <div class="multi-item">
+        `   <div>
+                <label>Cycle Name</label>
+                <select autocomplete="off" name="jovian_cycle_name" data-multi-select="cylceName">
+                    <option value="" disabled selected></option>
+                    <option value="prabhava">Prabhava</option>
+                    <option value="vibhava">Vibhava</option>
+                    <option value="sukla">Śukla</option>
+                </select>
+            </div>
+            <div>
+                <label>Month</label>
+                <input autocomplete="off" type="number" step="1" name="jovian_cycle_month" data-multi-select="month">
+                <label>Fortnight</label>
+                <input autocomplete="off" type="number" step="1" name="jovian_cycle_fortnight" data-multi-select="fortnight">
+                <label>Day</label>
+                <input autocomplete="off" type="number" step="1" name="jovian_cycle_day" data-multi-select="day">
+            </div>
+            <div>
+                <label>Remark</label>
+                <input autocomplete="off" type="text" name="jovian_cycle_remark" data-multi-select="remark">
+            </div>
+        </div>
+    </div>
+    <h3>Standard date</h3>
+    <div class="multiple" data-select="textDescription > textDate > origDate">
+        <div class="multi-item">
+        `   <div>
+                <label>When</label>
+                <input autocomplete="off" type="number" step="1" name="standard_date_when" data-multi-attr="when">
+                <label>not Before</label>
+                <input autocomplete="off" type="number" step="1" name="standard_date_not_before" data-multi-attr="notBefore">
+                <label>not After</label>
+                <input autocomplete="off" type="number" step="1" name="standard_date_not_after" data-multi-attr="notAfter">
+                <label>Precision</label>
+                <select autocomplete="off" name="standard_date_precision" data-multi-attr="precision">
+                    <option value="" disabled selected></option>
+                    <option value="100">100</option>
+                    <option value="50">50</option>
+                    <option value="25">25</option>
+                </select>
+            </div>
+            <div>
+                <label>Evidence</label>
+                <select autocomplete="off" name="standard_date_evidence" data-multi-attr="evidence">
+                    <option value="" disabled selected></option>
+                    <option value="colophon">colophon</option>
+                    <option value="archaeological">archaeological</option>
+                    <option value="geological">geological</option>
+                </select>
+                <label>Dating Method</label>
+                <input autocomplete="off" type="text" name="standard_date_method" data-multi-attr="datingMethod" readonly>
+            </div>
+        </div>
+    </div>
+    <h2>Text Filiation</h2>
+    <h3>Duplicate Text</h3>
+    <div class="multiple" data-select="textDescription > textFiliation > duplicateText > duplicateTextID">
+        <div class="multi-item" data-required="false">
+            <div>
+                <label>Text ID</label>
+                <input autocomplete="off" type="text" name="duplicate_text_id" data-multi-select="ID" required>
+                <label>Corpus</label>
+                <select autocomplete="off" name="duplicate_text_corpus" data-multi-select="corpus" required>
+                    <option value="" disabled selected></option>
+                    <option value="CEC">CEC</option>
+                    <option value="Khmer_corpus">Khmer corpus</option>
+                    <option value="Pallava">Pallava</option>
+                </select>
+        `   </div>
+            <div>
+                <label>Reference</label>
+                <input autocomplete="off" type="text" name="duplicate_text_reference" data-multi-select="reference" required>
+            </div>
+        </div>
+    </div>
+    <h3>Reissue</h3>
+    <div>
+        <label>Reissue</label>
+        <select autocomplete="off" type="text" name="reissue_value" data-select="textDescription > textFiliation > reissue > textReissue" data-attr="value">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+        <label>Date</label>
+        <input autocomplete="off" type="number" name="reissue_date" data-select="textDescription > textFiliation > reissue > reissueDate" data-attr="when" min="0" step="1">
+    </div>
+    <div class="multiple" data-select="textDescription > textFiliation > reissue > reissueTextID">
+        <div class="multi-item" data-required="false">
+            <div>
+                <label>Reissue ID</label>
+                <input autocomplete="off" type="text" name="reissue_text_id" data-multi-select="ID" required>
+                <label>Corpus</label>
+                <select autocomplete="off" name="reissue_text_corpus" data-multi-select="corpus" required>
+                    <option value="" disabled selected></option>
+                    <option value="CEC">CEC</option>
+                    <option value="Khmer_corpus">Khmer corpus</option>
+                    <option value="Pallava">Pallava</option>
+                </select>
+        `   </div>
+            <div>
+                <label>Reference</label>
+                <input autocomplete="off" type="text" name="reuissue_text_reference" data-multi-select="reference" required>
+            </div>
+        </div>
+    </div>
+    <h2>Text Summary</h2>
+    <div>
+        <textarea autocomplete="off" rows="10" name="text_summary" data-select="textDescription > textSummary" data-schema="descriptive names" placeholder="Summary description of the text"></textarea>
+    </div>
+    <div>
+        <label>Keywords</label>
+        <div class="multiple" data-select="textDescription > keywords > term">
+            <div class="multi-item">
+                <div>
+                    <input autocomplete="off" type="text" name="keyword" data-multi-select=":scope">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Text Remarks</label>
+        <textarea autocomplete="off" rows="10" name="text_summary" data-select="textDescription > textRemarks" data-schema="descriptive names" placeholder="Remarks on the text"></textarea>
+    </div>
+    <h2>Related Resources</h2>
+    <div>
+        <label>Artefact</label>
+        <div class="multiple" data-select="textDescription > relatedResources > artefactID">
+            <div class="multi-item">
+                <div>
+                    <input autocomplete="off" type="text" name="related_artefact_id" data-multi-attr="idno">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Surrogate</label>
+        <div class="multiple" data-select="textDescription > relatedResources > surrogateID">
+            <div class="multi-item">
+                <div>
+                    <input autocomplete="off" type="text" name="related_surrogate_id" data-multi-attr="idno">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Image</label>
+        <div class="multiple" data-select="textDescription > relatedResources > imageID">
+            <div class="multi-item">
+                <div>
+                    <input autocomplete="off" type="text" name="related_image_id" data-multi-attr="idno">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</article>
+<article id="footer">
+    <div id="footermessage"></div>
+    <div class="buttoncontainer row">
+        <button type="button" id="updateheader">preview</button>
+        <button type="button" id="cancelheader">cancel</button>
+    </div>
+</article>
+</div>
+</div>
+<form id="openform">
+    <div>
+        <div id="newfile">new file</div>
+        <div>open file:
+            <input autocomplete="off" type="file" id="file" name="file" accept=".xml"/>
+        </div>
+        <div id="autosavebox">
+            <hr>
+            <h4>Autosaved in your browser</h4>
+        </div>
+    </div>
+</form>
+</body>
+</html>
