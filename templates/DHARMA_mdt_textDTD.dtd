@@ -44,16 +44,16 @@
   <!ELEMENT alternativeDesignation (#PCDATA)>
   <!ELEMENT textType EMPTY>
   <!ATTLIST textType
-  value (unknown|valeur1|valeur2) "unknown"
+  value (unknown|donation|dedication) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT linesNumber (#PCDATA)>
   <!ELEMENT textLanguage EMPTY>
   <!ATTLIST textLanguage
-  value (unknown|valeur1|valeur2) "unknown"
+  value (unknown|Tamil|Sanskrit) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT textScript EMPTY>
   <!ATTLIST textScript
- value (unknown|valeur1|valeur2) "unknown"
+ value (unknown|Kawi|Batak) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT textDate (dateRegnalYear,date,dateJovianCycle,origDate)>
     <!ELEMENT dateRegnalYear (ruler,year,month,fornight,day,remark)>
