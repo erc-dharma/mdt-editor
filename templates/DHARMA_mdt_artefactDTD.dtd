@@ -46,14 +46,14 @@
   >
   <!ELEMENT material EMPTY>
   <!-- AJ: l'occurence ne peut pas être déclaré pour materiel sur l'élément lui-même. Il faut le déclarer lorsqu'il est l'enfant. Donc materiel+ devient materiel-->
-  <!ATTLIST material value (unknown|valeur1|valeur2|...) "unknown">
+  <!ATTLIST material value (unknown|sandstone|valeur2|...) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
 
 
   <!ELEMENT artefactType EMPTY>
   <!--AJ:je bouge la déclarartion de l'occurence.  -->
   <!ATTLIST artefactType
-  value (unknown|valeur1|valeur2|...) "unknown">
+  value (unknown|doorjamb|valeur2|...) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
 
   <!ELEMENT decoDesc (decoration+,decorationRemarks)>
