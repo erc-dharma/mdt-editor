@@ -85,7 +85,7 @@
     <!ATTLIST circumference
     unit (m|cm) "cm">
 
-  <!ELEMENT lettering (letteringTechnique,textHeight+,textWidth+,linesNumber,glyphHeight+,glyphWidth+,letteringRemarks)>
+  <!ELEMENT lettering (letteringTechnique,textHeight+,textWidth+,linesNumber+,glyphHeight+,glyphWidth+,letteringRemarks)>
     <!ELEMENT letteringTechnique EMPTY>
     <!ATTLIST letteringTechnique
     value (engraved | relief | painted | unknown) "unknown"><!-- liste à revoir -->
