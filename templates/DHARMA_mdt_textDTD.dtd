@@ -60,7 +60,7 @@
       <!ELEMENT ruler (#PCDATA)>
       <!ELEMENT year (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>
       <!ELEMENT remark (#PCDATA)>
     <!ELEMENT date (year,month,fornight,day,remark)>
@@ -69,12 +69,12 @@
     ><!-- liste à revoir -->
       <!--<!ELEMENT year (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>-->
     <!ELEMENT dateJovianCycle (cycleName,month,fornight,day,remark)>
       <!ELEMENT cycleName (#PCDATA)>
       <!--<!ELEMENT month (#PCDATA)>
-      <!ELEMENT fornight (#PCDATA)>
+      <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>-->
     <!ELEMENT origDate (#PCDATA)>
     <!ATTLIST origDate
