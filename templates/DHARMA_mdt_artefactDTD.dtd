@@ -181,7 +181,7 @@
 
     <!ELEMENT preservationEvents (p)>
     <!ATTLIST preservationEvents
-    type (acquisition|move|destruction|inventory) "move"
+    type (acquisition|move|destruction|inventory|observed) "move"
      when CDATA #REQUIRED>
 
     <!--  <!ELEMENT p (#PCDATA)>-->
