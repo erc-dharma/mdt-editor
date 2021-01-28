@@ -162,7 +162,7 @@
     <!ELEMENT discoveryCoordinates (#PCDATA)>
     <!ELEMENT discoveryEvents (p)>
     <!ATTLIST discoveryEvents
-    type (excavation|find|survey|purchase|unknown) "unknown"
+    type (excavation|find|survey|purchase|observed|unknown) "unknown"
     when CDATA #REQUIRED>
     <!-- liste à revoir -->
 
