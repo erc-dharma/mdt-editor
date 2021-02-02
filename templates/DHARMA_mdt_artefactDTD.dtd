@@ -112,7 +112,7 @@
   <!ELEMENT copperplateFormat (copperplateWeight, copperplateWeightOther?, bindingHole, sealPreservation, sealingTechnique, sealHeight, sealWidth)>
     <!ELEMENT copperplateWeight (#PCDATA)>
     <!ATTLIST copperplateWeight
-    unit CDATA #REQUIRED
+    unit (kg|g) "g"
     >
     <!ELEMENT copperplateWeightOther (#PCDATA)>
     <!-- AJ: il n'y a pas copperplateWeightOther dans le template seulement copperplateWeight -->
@@ -121,7 +121,7 @@
 
     <!ELEMENT bindingHole EMPTY>
     <!ATTLIST bindingHole
-    number CDATA #REQUIRED>
+    number CDATA #IMPLIED>
 
     <!ELEMENT sealPreservation EMPTY>
     <!ATTLIST sealPreservation

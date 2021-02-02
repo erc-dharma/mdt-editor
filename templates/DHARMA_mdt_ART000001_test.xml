@@ -18,7 +18,7 @@
 </resourceManagement>
 <artefactDescription>
   <artefactID idno="ART000001"/>
-  <compositeArtefactID idno=""/>
+  <compositeArtefactID/>
   <material value="sandstone"/><!-- may be repeated -->
   <artefactType value="doorjamb"/><!-- may be repeated -->
   <decoDesc>
@@ -29,27 +29,27 @@
     <height unit="cm">163</height>
     <width unit="cm">31</width>
 		<depth unit="cm">34</depth>
-    <diameter unit="cm"></diameter>
-    <circumference unit="cm"></circumference>
+    <diameter></diameter>
+    <circumference></circumference>
   </artefactFormat>
 	<lettering>
 		<letteringTechnique value="engraved"/>
-		<textHeight unit="cm"></textHeight>
-		<textWidth unit="cm"></textWidth>
+		<textHeight></textHeight>
+		<textWidth></textWidth>
 		<linesNumber>A: 21</linesNumber>
 		<linesNumber>B: 20</linesNumber>
-		<glyphHeight unit="cm"></glyphHeight>
-		<glyphWidth unit="cm"></glyphWidth>
+		<glyphHeight></glyphHeight>
+		<glyphWidth></glyphWidth>
 		<letteringRemarks><p></p></letteringRemarks>
 	</lettering>
 	<copperplateFormat>
-		<copperplateWeight unit="cm"></copperplateWeight>
-		<copperplateWeightOther unit="g"></copperplateWeightOther>
-		<bindingHole number=""/>
-		<sealPreservation value="no"/><!-- only if the seal is on the plate, in case of a set of copper-plates, all the information about the seal has to be describded at the composite artefact level -->
+		<copperplateWeight></copperplateWeight>
+		<copperplateWeightOther></copperplateWeightOther>
+		<bindingHole/>
+		<sealPreservation/><!-- only if the seal is on the plate, in case of a set of copper-plates, all the information about the seal has to be describded at the composite artefact level -->
 		<sealingTechnique value="not_applicable"/>
-		<sealHeight unit="cm"></sealHeight>
-		<sealWidth unit="cm"></sealWidth>
+		<sealHeight></sealHeight>
+		<sealWidth></sealWidth>
 	</copperplateFormat>
 	<condition value="unknown"/>
 	<artefactHistory><p></p></artefactHistory>
