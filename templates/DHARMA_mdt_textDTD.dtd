@@ -56,7 +56,7 @@
  value (unknown|Kawi|Batak) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
   <!ELEMENT textDate (dateRegnalYear,date,dateJovianCycle,origDate)>
-    <!ELEMENT dateRegnalYear (ruler,year*,month*,fornight*,day*,remark*)>
+    <!ELEMENT dateRegnalYear (ruler,year*,month*,fortnight*,day*,remark*)>
       <!ELEMENT ruler (#PCDATA)>
       <!ELEMENT year (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
@@ -71,7 +71,7 @@
       <!ELEMENT month (#PCDATA)>
       <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>-->
-    <!ELEMENT dateJovianCycle (cycleName,month,fornight,day,remark)>
+    <!ELEMENT dateJovianCycle (cycleName,month,fortnight,day,remark)>
       <!ELEMENT cycleName (#PCDATA)>
       <!--<!ELEMENT month (#PCDATA)>
       <!ELEMENT fortnight (#PCDATA)>
