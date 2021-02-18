@@ -46,14 +46,14 @@
   >
   <!ELEMENT material EMPTY>
   <!-- AJ: l'occurence ne peut pas être déclaré pour materiel sur l'élément lui-même. Il faut le déclarer lorsqu'il est l'enfant. Donc materiel+ devient materiel-->
-  <!ATTLIST material value (unknown|sandstone|valeur2|...) "unknown">
+  <!ATTLIST material value (unknown|metal|copper_alloy|gold|iron_steel|silver|tin|other_alloy|mineral_based|clay|glass|stucco|terracotta|modern_material|paper|plaster|resin|wax|organic|bone|wood|horn|stone|andesite|basalt|granite|laterite|limestone|marble|precious_stone|sandstone|schist|semi_precious_stone|agate|carnelian|lapis_lazuli|quartz|steatite|tufa) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
 
 
   <!ELEMENT artefactType EMPTY>
   <!--AJ:je bouge la déclarartion de l'occurence.  -->
   <!ATTLIST artefactType
-  value (unknown|doorjamb|valeur2|...) "unknown">
+  value (unknown|architectural_element|base|block|brick|column|doorjamb|doorstep|lintel|makara|pilaster|railing_coping|railing_crossbar|railing_post|slab|wall|documentary|cylinder_seal|foil|foundation_deposit|copperplate|seal|seal_impression|jewellery|amulet|bead|ring|monument|gravestone|menhir|miniature_stupa|pillar|ring_stone|stele|tablet|natural_object|boulder|cliff_face|river_stone|sculpture|relief|statue|statue_base|utensil|bowl|chalice|cup|grinding_stone|kendi|millstone|plate|potsherd|tripod) "unknown">
   <!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
 
   <!ELEMENT decoDesc (decoration+,decorationRemarks)>
