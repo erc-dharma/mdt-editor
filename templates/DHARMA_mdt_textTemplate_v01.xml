@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- Name of the file: according to the FNC of the project, it should be DHARMA_mdt_inscriptionID.xml and the inscriptionID comes from the tag <textID> -->
 <!DOCTYPE textMetadataTemplate SYSTEM "DHARMA_mdt_textDTD.dtd">
 <textMetadataTemplate xmlns="https://github.com/erc-dharma/mdt-editor">
 <resourceManagement>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- Name of the file: according to the FNC of the project, it should be DHARMA_mdt_inscriptionID.xml and the inscriptionID comes from the tag <textID> -->
 <!ELEMENT textMetadataTemplate (resourceManagement,textDescription)>
   <!ELEMENT resourceManagement (resourceID,metadataOrigin,metadataEditor,metadataContribution+,metadataReview+,project,corpus,metadataRights)>
   <!ELEMENT resourceID EMPTY>
