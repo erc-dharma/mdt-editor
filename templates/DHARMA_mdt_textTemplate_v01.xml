@@ -2,85 +2,85 @@
 <!-- Name of the file: according to the FNC of the project, it should be DHARMA_mdt_inscriptionID.xml and the inscriptionID comes from the tag <textID> -->
 <!DOCTYPE textMetadataTemplate SYSTEM "DHARMA_mdt_textDTD.dtd">
 <textMetadataTemplate xmlns="https://github.com/erc-dharma/mdt-editor">
-<resourceManagement>
-	<resourceID digitalID=""/>
-	<metadataOrigin></metadataOrigin>
-	<metadataEditor>
-		<creation who="" when=""/><!-- may be repeated -->
+<resourceManagement><!-- Description of the file -->
+	<resourceID digitalID=""/><!-- DHARMA identifier of the text: The identifier must have the form INSCorpusDesignation#####, where the corpusDesignation is taken from 1.1 of the DHARMA Guide to File Naming, and ##### is a five-digit number with leading zeroes. If there is an established inventory, created independently of DHARMA, indicate here the standard citation form of the inventory number (examples: "K. 24", "C. 101", "EIAD 5", "IR 761") adapted to the DHARMA conventions (expamples: INSK00024, INSC00101, INSEIAD00005, INSIR00761) -->
+	<metadataOrigin></metadataOrigin><!-- Origin of the metadata: database or publication -->
+	<metadataEditor><!-- Edition of the metadata  -->
+		<creation who="" when=""/><!-- Person(s) who edited metadata and date of the edition (YYYY-MM-DD). May be repeated -->
 	</metadataEditor>
-	<metadataContribution>
-		<change who="" when="" status=""></change><!-- may be repeated -->
+	<metadataContribution><!-- Modification of the metadata -->
+		<change who="" when="" status=""></change><!-- Person(s) who modified to metadata edition, date of the modification (YYYY-MM-DD) and type of modification. May be repeated -->
 	</metadataContribution>
-	<metadataReview who="" when=""/><!-- may be repeated -->
-	<project>DHARMA</project>
-	<corpus></corpus>
-	<metadataRights target="CC_0"/>
+	<metadataReview who="" when=""/><!-- Validation of the metadata: person(s) who reviewed metadata and date of the review (YYYY-MM-DD). May be repeated -->
+	<project>DHARMA</project><!-- Project responsible for making these metadata available: DHARMA -->
+	<corpus></corpus><!-- Corpus (or corpora) to which the inscription pertains -->
+	<metadataRights target="CC_0"/><!-- Licence applicable to metadata: CC0 -->
 </resourceManagement>
 <textDescription>
-  <textID idno=""/>
-	<alternativeID></alternativeID><!-- may be repeated -->
-	<textDesignation></textDesignation>
-	<alternativeDesignation></alternativeDesignation><!-- may be repeated -->
-  <textType value=""/><!-- may be repeated -->
-  <linesNumber></linesNumber>
-	<textLanguage value=""/><!-- may be repeated -->
-	<textScript value=""/><!-- may be repeated -->
-	<textDate>
-	<dateRegnalYear>
-		<ruler></ruler>
-		<year></year>
-		<month></month>
-		<fortnight></fortnight>
-		<day></day>
-		<remark></remark>
+  <textID idno=""/><!-- DHARMA identifier of the text: The identifier must have the form INSCorpusDesignation#####, where the corpusDesignation is taken from 1.1 of the DHARMA Guide to File Naming, and ##### is a five-digit number with leading zeroes. If there is an established inventory, created independently of DHARMA, indicate here the standard citation form of the inventory number (examples: "K. 24", "C. 101", "EIAD 5", "IR 761") adapted to the DHARMA conventions (expamples: INSK00024, INSC00101, INSEIAD00005, INSIR00761). -->
+	<alternativeID></alternativeID><!-- Other identifiers for the text that may be found in scholarly literature. May be repeated -->
+	<textDesignation></textDesignation><!-- The title that will be or has been assigned to the inscription. For creating such titles, follow the recommendation of the Encoding Guide.  -->
+	<alternativeDesignation></alternativeDesignation><!-- Other titles that have been assigned to the text in scholarly literature. May be repeated -->
+  <textType value=""/><!-- Choose the most precise term in the hierarchy to describe the type of text. May be repeated -->
+  <linesNumber></linesNumber><!-- Sum total of lines in the text, all surfaces combined. The number filled in here should be one that a machine can recognize. -->
+	<textLanguage value=""/><!-- Choose the language of the text. May be repeated -->
+	<textScript value=""/><!-- Choose the script of the text. May be repeated -->
+	<textDate><!-- Description of the date of the text: describe here the date of the text according to the calendar (regnal year with the name of the ruler, Saka, Gupta, Valabhi, Vikrama, Burmese or Sanjaya calendar, Jovian cycle) and translate it in gregorian equivalence -->
+	<dateRegnalYear><!-- Regnal date: fill in the name of the ruler and the specification of the month, fornight and day -->
+		<ruler></ruler><!-- Name of the ruler -->
+		<year></year><!-- Specification of the year -->
+		<month></month><!-- Specification of the month -->
+		<fortnight></fortnight><!-- Specification of the fortnight -->
+		<day></day><!-- Specification of the day -->
+		<remark></remark><!-- Remarks on the date -->
 	</dateRegnalYear>
-	<date calendar=""><!-- may be repeated --><!-- the calendar has to be declared in the attribute calendar -->
-		<year></year>
-		<month></month>
-		<fortnight></fortnight>
-		<day></day>
-		<remark></remark>
+	<date calendar=""><!-- Before to declare the date, choose the calendar and then, fill in the specification of the year, month, fortnight and day. May be repeated -->
+		<year></year><!-- Specification of the year -->
+		<month></month><!-- Specification of the month -->
+		<fortnight></fortnight><!-- Specification of the fortnight -->
+		<day></day><!-- Specification of the day -->
+		<remark></remark><!-- Remarks on the date -->
 	</date>
 	<dateJovianCycle>
-		<cycleName></cycleName>
-		<month></month>
-		<fortnight></fortnight>
-		<day></day>
-		<remark></remark>
+		<cycleName></cycleName><!-- Name of the Jovian cycle -->
+		<month></month><!-- Specification of the month -->
+		<fortnight></fortnight><!-- Specification of the fortnight -->
+		<day></day><!-- Specification of the day -->
+		<remark></remark><!-- Remarks on the date -->
 	</dateJovianCycle>
-	<origDate notBefore="" notAfter="" when="" precision="" evidence="" datingMethod="gregorian"></origDate><!-- equivalence of the date according to the occidental calendar -->
+	<origDate notBefore="" notAfter="" when="" precision="" evidence="" datingMethod="gregorian"></origDate><!-- Equivalence of the date according to the gregorian calendar. Specify the precise date if known (when=YYYY-MM-DD) or the range (notBefore, notAfter), the precision of th datation (high, medium, low) and choose the evidence that makes you able to date the text. -->
 	</textDate>
 	<textFiliation>
-		<duplicateText>
+		<duplicateText><!-- The text can be a duplicate of an other text. Fill in here the metadata of the duplicated text. May be repeated -->
 		<duplicateTextID>
-			<ID></ID>
-			<corpus></corpus>
-			<reference></reference>
-		</duplicateTextID><!-- may be repeated -->
+			<ID></ID><!-- Identifier of the duplicated text -->
+			<corpus></corpus><!-- Corpus to which the duplicated text belongs -->
+			<reference></reference><!-- Bibliographical reference of the duplicated text filled in according to the Zotero Guide -->
+		</duplicateTextID><
 		</duplicateText>
-		<reissue>
-		<textReissue value=""/>
+		<reissue><!-- The text can be a reissue of an other text. Fill in here the metadata of the reissued text. May be repeated -->
+		<textReissue value=""/><!-- Select the value "yes" if the text is a reissue -->
 		<reissueTextID>
-			<ID></ID>
-			<corpus></corpus>
-			<reference></reference>
-		</reissueTextID><!-- may be repeated -->
-		<reissueDate when=""/>
+			<ID></ID><!-- Identifier of the reissued text -->
+			<corpus></corpus><!-- Corpus to which the reissued text belongs -->
+			<reference></reference><!-- Bibliographical reference of the reissued text filled in according to the Zotero Guide -->
+		</reissueTextID>
+		<reissueDate when=""/><!-- Date of the reissue following the gregorian calendar, if it is different of the date of the text (YYYY-MM-DD) -->
 	</reissue>
 	</textFiliation>
-  <textSummary><p></p></textSummary>
-	<keywords><!-- may be repeated -->
-		<term></term>
+  <textSummary><p></p></textSummary><!-- Summary of the text -->
+	<keywords><!-- Add keywords to charaterize the description of the text. The choice of terms is free -->
+		<term></term><!-- may be repeated -->
 	</keywords>
-	<textRemarks><p></p></textRemarks>
+	<textRemarks><p></p></textRemarks><!-- Remarks on the text -->
 	<textRights>
-		<publicationProject></publicationProject>
-		<textDistributionRights target=""/>
+		<publicationProject>DHARMA</publicationProject><!-- Project responsible for making this text edition available: DHARMA -->
+		<textDistributionRights target="CC-BY"/><!-- Licence applicable to the text edition: CC-BY -->
 	</textRights>
 	<relatedResources>
-		<artefactID idno=""/><!-- may be repeated -->
-		<surrogateID idno=""/><!-- may be repeated -->
-		<imageID idno=""/><!-- may be repeated -->
+		<artefactID idno=""/><!-- Identifier(s) of the related artefact(s). May be repeated -->
+		<surrogateID idno=""/><!-- Identifier(s) of the related surrogate(s). May be repeated -->
+		<imageID idno=""/><!-- Identifier(s) of the related image(s). May be repeated -->
 	</relatedResources>
 </textDescription>
 </textMetadataTemplate>
