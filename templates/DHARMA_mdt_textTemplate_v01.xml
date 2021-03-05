@@ -14,9 +14,9 @@
 	<metadataReview who="" when=""/><!-- Validation of the metadata: person(s) who reviewed metadata and date of the review (YYYY-MM-DD). May be repeated -->
 	<project>DHARMA</project><!-- Project responsible for making these metadata available: DHARMA -->
 	<corpus></corpus><!-- Corpus (or corpora) to which the inscription pertains -->
-	<metadataRights target="CC_0"/><!-- Licence applicable to metadata: CC0 -->
+	<metadataRights target="CC0"/><!-- Licence applicable to metadata: CC0 -->
 </resourceManagement>
-<textDescription>
+<textDescription><!-- Description of the text -->
   <textID idno=""/><!-- DHARMA identifier of the text: The identifier must have the form INSCorpusDesignation#####, where the corpusDesignation is taken from 1.1 of the DHARMA Guide to File Naming, and ##### is a five-digit number with leading zeroes. If there is an established inventory, created independently of DHARMA, indicate here the standard citation form of the inventory number (examples: "K. 24", "C. 101", "EIAD 5", "IR 761") adapted to the DHARMA conventions (expamples: INSK00024, INSC00101, INSEIAD00005, INSIR00761). -->
 	<alternativeID></alternativeID><!-- Other identifiers for the text that may be found in scholarly literature. May be repeated -->
 	<textDesignation></textDesignation><!-- The title that will be or has been assigned to the inscription. For creating such titles, follow the recommendation of the Encoding Guide.  -->

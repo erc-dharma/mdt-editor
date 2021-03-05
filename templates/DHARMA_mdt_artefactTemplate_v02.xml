@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE artefactMetadataTemplate SYSTEM "DHARMA_mdt_artefactDTD.dtd">
 <artefactMetadataTemplate>
-<resourceManagement>
-	<resourceID digitalID=""/>
-	<metadataOrigin></metadataOrigin>
-	<metadataEditor>
-		<creation who="" when=""/><!-- may be repeated -->
+<resourceManagement><!-- Description of the file -->
+	<resourceID digitalID=""/><!-- DHARMA identifier of the artefact: The identifier must have the form ART######, according to the DHARMA Guide to File Naming. ##### is a six-digit number with leading zeroes. -->
+	<metadataOrigin></metadataOrigin><!-- Origin of the metadata: database or publication -->
+	<metadataEditor><!-- Edition of the metadata  -->
+		<creation who="" when=""/><!-- Person(s) who edited metadata and date of the edition (YYYY-MM-DD). May be repeated -->
 	</metadataEditor>
-	<metadataContribution>
-		<change who="" when="" status=""></change><!-- may be repeated -->
+	<metadataContribution><!-- Modification of the metadata -->
+		<change who="" when="" status=""></change><<!-- Person(s) who modified to metadata edition, date of the modification (YYYY-MM-DD) and type of modification. May be repeated -->
 	</metadataContribution>
-	<metadataReview who="" when=""/><!-- may be repeated -->
-	<project></project>
-	<corpus></corpus>
-	<metadataRights target=""/>
+	<metadataReview who="" when=""/><!-- Validation of the metadata: person(s) who reviewed metadata and date of the review (YYYY-MM-DD). May be repeated -->
+	<project>DHARMA</project><!-- Project responsible for making these metadata available: DHARMA -->
+	<corpus></corpus><!-- Corpus (or corpora) to which the inscribded artefact pertains -->
+	<metadataRights target="CC0"/><!-- Licence applicable to metadata: CC0 -->
 </resourceManagement>
-<artefactDescription>
+<artefactDescription><!-- Description of the artefact -->
   <artefactID idno=""/>
   <compositeArtefactID idno=""/>
   <material value=""/><!-- may be repeated -->
