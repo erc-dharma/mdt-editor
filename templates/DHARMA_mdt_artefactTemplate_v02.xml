@@ -16,23 +16,23 @@
 	<metadataRights target="CC0"/><!-- Licence applicable to metadata: CC0 -->
 </resourceManagement>
 <artefactDescription><!-- Description of the artefact -->
-  <artefactID idno=""/>
-  <compositeArtefactID idno=""/>
-  <material value=""/><!-- may be repeated -->
-  <artefactType value=""/><!-- may be repeated -->
-  <decoDesc>
-		<decoration value=""/><!-- may be repeated -->
-    <decorationRemarks><p></p></decorationRemarks>
+  <artefactID idno=""/><!-- DHARMA identifier of the artefact: The identifier must have the form ART######, according to the DHARMA Guide to File Naming. ##### is a six-digit number with leading zeroes. -->
+  <compositeArtefactID idno=""/><!-- If the artefact belongs to a composite artefact, such as a set of copper-plates or blocks, forming a consistent whole, an identifier is attributed to this composite artefact. -->
+  <material value=""/><!-- Choose the most precise term in the hierarchy to describe the type of material. May be repeated -->
+  <artefactType value=""/><!-- Choose the most precise term in the hierarchy to describe the type of artefact. May be repeated -->
+  <decoDesc><!-- Description of the decoration and iconography -->
+		<decoration value=""/><!-- Select the element(s) of decoration and iconography present on the artefact. May be repeated -->
+    <decorationRemarks><p></p></decorationRemarks><!-- Remarks on the decoration and the iconography of the artefact -->
   </decoDesc>
-  <artefactFormat>
-    <height unit=""></height>
-    <width unit=""></width>
-		<depth unit=""></depth>
-    <diameter unit=""></diameter>
-    <circumference unit=""></circumference>
+  <artefactFormat><!-- Description of the format of the artefact -->
+    <height unit=""></height><!-- Height of the artefact: The orientation of the text determines what is top and bottom of the artefact. The height is to be recorded in centimeters (if necessary, after conversion from nonmetric units). Use dot and not comma before decimal fractions. -->
+    <width unit=""></width><!-- Width of the artefact: The orientation of the text determines what is left and right side of the artefact. The width is to be recorded in centimeters (if necessary, after conversion from nonmetric units). Use dot and not comma before decimal fractions. -->
+		<depth unit=""></depth><!-- Depth of the artefact: The position of the text determines what is front and back  of the artefact. The depth is to be recorded in centimeters (if necessary, after conversion from nonmetric units). Use dot and not comma before decimal fractions. -->
+    <diameter unit=""></diameter><!-- Diameter of the artefact: Record diameter only if width and depth cannot be distinguished. The diameter is to be recorded in centimeters (if necessary, after conversion from nonmetric units). Use dot and not comma before decimal fractions. -->
+    <circumference unit=""></circumference><!-- Circumference of the artefact: Record circumference (besides diameter) at your discretion if width and depth cannot be distinguished. The circumference is to be recorded in centimeters (if necessary, after conversion from nonmetric units). Use dot and not comma before decimal fractions. -->
   </artefactFormat>
-	<lettering>
-		<letteringTechnique value=""/>
+	<lettering><!-- Description of the lettering on the artefact -->
+		<letteringTechnique value=""/><!-- Select the type of lettering used -->
 		<textHeight unit=""></textHeight>
 		<textWidth unit=""></textWidth>
 		<linesNumber></linesNumber>
