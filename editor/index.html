@@ -55,16 +55,16 @@
     <h2>Metadata Management</h2>
     <div>
         <label>Metadata Origin</label>
-        <input autocomplete="off" type="text" name="metadata_origin" data-select="resourceManagement > metadataOrigin" placeholder="XX">
+        <input autocomplete="off" type="text" name="metadata_origin" data-select="resourceManagement > metadataOrigin" placeholder="XX" data-tip="Origin of the metadata: database or publication">
     </div>
     <h4>Metadata edition</h4>
     <div class="multiple" data-select="resourceManagement > metadataEditor > creation">
         <div class="multi-item">
             <div> 
                 <label>Who</label>
-                <input autocomplete="off" type="text" name="metadata_edition_who" data-multi-attr="who" placeholder="Name of editor" required>
+                <input autocomplete="off" type="text" name="metadata_edition_who" data-multi-attr="who" placeholder="Name of editor" required data-tip="Person(s) who edited metadata">
                 <label>When</label>
-                <input autocomplete="off" type="date" name="metadata_edition_when" data-multi-attr="when" placeholder="Date of edition" required>
+                <input autocomplete="off" type="date" name="metadata_edition_when" data-multi-attr="when" placeholder="Date of edition" required data-tip="Date of the edition">
             </div>
         </div>
     </div>
@@ -73,10 +73,10 @@
         <div class="multi-item">
             <div>
                 <label>Who</label>
-                <input autocomplete="off" type="text" name="revision_history_who" data-multi-attr="who" placeholder="lds project" required>
+                <input autocomplete="off" type="text" name="revision_history_who" data-multi-attr="who" placeholder="lds project" required data-tip="Person(s) who modified the metadata edition">
                 <label>When</label>
-                <input autocomplete="off" type="date" name="revision_history_when" data-multi-attr="when" placeholder="Date of edition" required>
-                <select required autocomplete="off" name="revision_history_status" data-multi-attr="status">
+                <input autocomplete="off" type="date" name="revision_history_when" data-multi-attr="when" placeholder="Date of edition" required data-tip="Date of the modification">
+                <select required autocomplete="off" name="revision_history_status" data-multi-attr="status" data-tip="Type of the modification">
                     <option value="draft">draft</option>
                     <option value="candidate">candidate</option>
                     <option value="approved">approved</option>
@@ -92,7 +92,7 @@
         <label>Project</label>
         <input autocomplete="off" type="text" name="metadata_project" data-select="resourceManagement > project" readonly>
         <label>Corpus<label>
-        <select required autocomplete="off" name="metadata_corpus" data-select="resourceManagement > corpus">
+        <select required autocomplete="off" name="metadata_corpus" data-select="resourceManagement > corpus" multiple>
             <option value="CEC">CEC</option>
             <option value="Khmer_corpus">Khmer corpus</option>
             <option value="Pallava">Pallava</option>

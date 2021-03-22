@@ -295,6 +295,8 @@
             }
             for(const f of ret.querySelectorAll('input[type="file"]'))
                 f.addEventListener('change',file.selectPart,false);
+            
+            editor.setupTips(ret);
 
             editor.updateButtonrows(par);
         },
@@ -577,13 +579,17 @@
             for(const t of heditor.querySelectorAll('textarea:not(.noCodeMirror)'))
                 state.cmirror.push(editor.codeMirrorInit(t));
 
-            for(const t of heditor.querySelectorAll('[data-tip]')) {
-                t.addEventListener('focus',events.tipShow);
-                t.addEventListener('blur',events.tipRemove);
-            }
+            editor.setupTips(heditor);
 
             if(!state.saveInterval) 
                 state.saveInterval = window.setInterval(autosaved.save,300000);
+        },
+
+        setupTips: function(topel) {
+            for(const t of topel.querySelectorAll('[data-tip]')) {
+                t.addEventListener('focus',events.tipShow);
+                t.addEventListener('blur',events.tipRemove);
+            }
         },
 
         checkInvalid: function() {
@@ -870,7 +876,7 @@
             }
             while(state.cmirror.length > 0) state.cmirror.pop().toTextArea();
             
-            const toplevel = editor.updateFields(state.xmlDoc);
+            /*const toplevel =*/ editor.updateFields(state.xmlDoc);
             
             // write to string to fix xml:lang attributes
             const serialized = xml.serialize(state.xmlDoc);
