@@ -56,7 +56,7 @@
 			<ID></ID><!-- Identifier of the duplicated text -->
 			<corpus></corpus><!-- Corpus to which the duplicated text belongs -->
 			<reference></reference><!-- Bibliographical reference of the duplicated text filled in according to the Zotero Guide -->
-		</duplicateTextID><
+		</duplicateTextID>
 		</duplicateText>
 		<reissue><!-- The text can be a reissue of an other text. Fill in here the metadata of the reissued text. May be repeated -->
 		<textReissue value=""/><!-- Select the value "yes" if the text is a reissue -->
