@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE artefactMetadataTemplate SYSTEM "DHARMA_mdt_artefactDTD.dtd">
+<!DOCTYPE artefactMetadataTemplate SYSTEM "https://raw.githubusercontent.com/erc-dharma/project-documentation/master/schema/latest/DHARMA_mdt_artefactDTD.dtd">
 <artefactMetadataTemplate>
 <resourceManagement><!-- Description of the file -->
 	<resourceID digitalID=""/><!-- DHARMA identifier of the artefact: The identifier must have the form ART######, according to the DHARMA Guide to File Naming. ##### is a six-digit number with leading zeroes. -->
