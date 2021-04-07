@@ -27,7 +27,10 @@
 	<textTypeLevel4 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
   <linesNumber></linesNumber><!-- Sum total of lines in the text, all surfaces combined. The number filled in here should be one that a machine can recognize. -->
 	<textLanguage value=""/><!-- Choose the language of the text. May be repeated -->
-	<textScript value=""/><!-- Choose the script of the text. May be repeated -->
+	<textScriptClassificationLevel1 value=""/><!-- Choose the script of the text. May be repeated -->
+	<textScriptClassificationLevel2 value=""/><!-- Choose the specific script of the text if needed, depending on the main script you chose. May be repeated -->
+	<textScriptClassificationLevel3 value=""/><!-- Choose the specific script of the text if needed, depending on the main script you chose. May be repeated -->
+	<textScriptMaturity value=""/><!-- Choose the maturity of Brahmi-derived scripts, if you chose before at the first level of text script classification the category 'Brahmi and derivatives'-->
 	<textDate><!-- Description of the date of the text: describe here the date of the text according to the calendar (regnal year with the name of the ruler, Saka, Gupta, Valabhi, Vikrama, Burmese or Sanjaya calendar, Jovian cycle) and translate it in gregorian equivalence -->
 	<dateRegnalYear><!-- Regnal date: fill in the name of the ruler and the specification of the month, fornight and day -->
 		<ruler></ruler><!-- Name of the ruler -->
