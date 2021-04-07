@@ -21,7 +21,10 @@
 	<alternativeID></alternativeID><!-- Other identifiers for the text that may be found in scholarly literature. May be repeated -->
 	<textDesignation></textDesignation><!-- The title that will be or has been assigned to the inscription. For creating such titles, follow the recommendation of the Encoding Guide.  -->
 	<alternativeDesignation></alternativeDesignation><!-- Other titles that have been assigned to the text in scholarly literature. May be repeated -->
-  <textType value=""/><!-- Choose the most precise term in the hierarchy to describe the type of text. May be repeated -->
+  <textTypeLevel1 value=""/><!-- Choose the main term in the hierarchy to describe the category of text. May be repeated -->
+	<textTypeLevel2 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
+	<textTypeLevel3 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
+	<textTypeLevel4 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
   <linesNumber></linesNumber><!-- Sum total of lines in the text, all surfaces combined. The number filled in here should be one that a machine can recognize. -->
 	<textLanguage value=""/><!-- Choose the language of the text. May be repeated -->
 	<textScript value=""/><!-- Choose the script of the text. May be repeated -->
