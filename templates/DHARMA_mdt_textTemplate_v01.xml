@@ -48,7 +48,7 @@
 		<remark></remark><!-- Remarks on the date -->
 	</date>
 	<dateJovianCycle>
-		<cycleName></cycleName><!-- Name of the Jovian cycle -->
+		<cycleName value=""/><!-- Choose the name of the Jovian cycle -->
 		<month></month><!-- Specification of the month -->
 		<fortnight></fortnight><!-- Specification of the fortnight -->
 		<day></day><!-- Specification of the day -->
