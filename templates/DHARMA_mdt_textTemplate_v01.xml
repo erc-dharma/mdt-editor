@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- Name of the file: according to the FNC of the project, it should be DHARMA_mdt_inscriptionID.xml and the inscriptionID comes from the tag <textID> -->
-<!DOCTYPE textMetadataTemplate SYSTEM "DHARMA_mdt_textDTD.dtd">
+<!DOCTYPE textMetadataTemplate SYSTEM "https://raw.githubusercontent.com/erc-dharma/project-documentation/master/schema/latest/DHARMA_mdt_textDTD.dtd">
 <textMetadataTemplate xmlns="https://github.com/erc-dharma/mdt-editor">
 <resourceManagement><!-- Description of the file -->
 	<resourceID digitalID=""/><!-- DHARMA identifier of the text: The identifier must have the form INSCorpusDesignation#####, where the corpusDesignation is taken from 1.1 of the DHARMA Guide to File Naming, and ##### is a five-digit number with leading zeroes. If there is an established inventory, created independently of DHARMA, indicate here the standard citation form of the inventory number (examples: "K. 24", "C. 101", "EIAD 5", "IR 761") adapted to the DHARMA conventions (expamples: INSK00024, INSC00101, INSEIAD00005, INSIR00761) -->
@@ -21,10 +21,16 @@
 	<alternativeID></alternativeID><!-- Other identifiers for the text that may be found in scholarly literature. May be repeated -->
 	<textDesignation></textDesignation><!-- The title that will be or has been assigned to the inscription. For creating such titles, follow the recommendation of the Encoding Guide.  -->
 	<alternativeDesignation></alternativeDesignation><!-- Other titles that have been assigned to the text in scholarly literature. May be repeated -->
-  <textType value=""/><!-- Choose the most precise term in the hierarchy to describe the type of text. May be repeated -->
+  <textTypeLevel1 value=""/><!-- Choose the main term in the hierarchy to describe the category of text. May be repeated -->
+	<textTypeLevel2 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
+	<textTypeLevel3 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
+	<textTypeLevel4 value=""/><!-- Choose the most precise term depending on the previous category you chose to describe the type of text. May be repeated -->
   <linesNumber></linesNumber><!-- Sum total of lines in the text, all surfaces combined. The number filled in here should be one that a machine can recognize. -->
 	<textLanguage value=""/><!-- Choose the language of the text. May be repeated -->
-	<textScript value=""/><!-- Choose the script of the text. May be repeated -->
+	<textScriptClassificationLevel1 value=""/><!-- Choose the script of the text. May be repeated -->
+	<textScriptClassificationLevel2 value=""/><!-- Choose the specific script of the text if needed, depending on the main script you chose. May be repeated -->
+	<textScriptClassificationLevel3 value=""/><!-- Choose the specific script of the text if needed, depending on the main script you chose. May be repeated -->
+	<textScriptMaturity value=""/><!-- Choose the maturity of Brahmi-derived scripts, if you chose before at the first level of text script classification the category 'Brahmi and derivatives'-->
 	<textDate><!-- Description of the date of the text: describe here the date of the text according to the calendar (regnal year with the name of the ruler, Saka, Gupta, Valabhi, Vikrama, Burmese or Sanjaya calendar, Jovian cycle) and translate it in gregorian equivalence -->
 	<dateRegnalYear><!-- Regnal date: fill in the name of the ruler and the specification of the month, fornight and day -->
 		<ruler></ruler><!-- Name of the ruler -->
@@ -42,7 +48,7 @@
 		<remark></remark><!-- Remarks on the date -->
 	</date>
 	<dateJovianCycle>
-		<cycleName></cycleName><!-- Name of the Jovian cycle -->
+		<cycleName value=""/><!-- Choose the name of the Jovian cycle -->
 		<month></month><!-- Specification of the month -->
 		<fortnight></fortnight><!-- Specification of the fortnight -->
 		<day></day><!-- Specification of the day -->

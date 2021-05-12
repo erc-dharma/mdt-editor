@@ -34,7 +34,7 @@
     <!ATTLIST metadataRights
     target CDATA #FIXED "CC0 1.0"
     >
-<!ELEMENT textDescription (textID,alternativeID,textDesignation,alternativeDesignation,textType+,linesNumber,textLanguage+,textScript+,textDate,origDate,textFiliation,textSummary,keywords,textRemarks,textBibliography,textRights,relatedResources)>
+<!ELEMENT textDescription (textID,alternativeID,textDesignation,alternativeDesignation,textTypeLevel1+,textTypeLevel2+,textTypeLevel3+,textTypeLevel4+,linesNumber,textLanguage+,textScriptClassificationLevel1+,textScriptClassificationLevel2+,textScriptClassificationLevel3,textScriptMaturity+,textDate,origDate,textFiliation,textSummary,keywords,textRemarks,textBibliography,textRights,relatedResources)>
 <!-- PRECISER LES CHAMPS OBLIGATOIRES OU OPTIONNELS -->
   <!ELEMENT textID EMPTY>
   <!ATTLIST textID
@@ -43,19 +43,43 @@
   <!ELEMENT alternativeID (#PCDATA)>
   <!ELEMENT textDesignation (#PCDATA)>
   <!ELEMENT alternativeDesignation (#PCDATA)>
-  <!ELEMENT textType EMPTY>
-  <!ATTLIST textType
-  value (unknown|donation|dedication) "unknown"
-  ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
+  <!ELEMENT textTypeLevel1 EMPTY>
+  <!ATTLIST textTypeLevel1
+  value (unknown_text_type|administrative/legal|commemorative|donative|inaugurative|literary|miscellaneous|magical/religious/moral|utilitarian) "unknown_text_type"
+  >
+  <!ELEMENT textTypeLevel2 EMPTY>
+  <!ATTLIST textTypeLevel2
+  value (unknown_text_type|agreement_between_civil_parties|agreement_between_rulers|royal_order|eulogy|religious_grant_of_mobile_assets|religious_land_grant|secular_donation|construction_of_public_utility|construction_of_religious_building|installation_of_architectural_element|installation_of_religious_image|renovation|literary_citation|devotional|merit_transfer|moral/religious_instruction/exhortation|religious_citation|ritual/magical_formula|siddhayatra|date|designation_of_community|designation_of_office|label|name_of_deity|name_of_person|topographic) "unknown_text_type"
+  >
+  <!ELEMENT textTypeLevel3 EMPTY>
+  <!ATTLIST textTypeLevel3
+  value (unknown_text_type|debt_clearance|sale_deed|resolution_of_dispute|tax_regulation|genealogy|memorial|victory_record|blank_land_grant|confirmation_of_previous_land_grant|land_sale_grant|pranidhana|curse/spell|mantra/dharani|chronogram|artwork_label) "unknown_text_type"
+  >
+  <!ELEMENT textTypeLevel4 EMPTY>
+  <!ATTLIST textTypeLevel4
+  value (unknown_text_type|hero_memorial|sati_memorial|pratitya-samutpada) "unknown_text_type"
+  >
   <!ELEMENT linesNumber (#PCDATA)>
   <!ELEMENT textLanguage EMPTY>
   <!ATTLIST textLanguage
   value (unknown|Tamil|Sanskrit) "unknown"
   ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
-  <!ELEMENT textScript EMPTY>
-  <!ATTLIST textScript
- value (unknown|Kawi|Batak) "unknown"
-  ><!-- ajouter les valeurs des vocabulaires contrôlés d'OpenTheso -->
+  <!ELEMENT textScriptClassificationLevel1 EMPTY>
+  <!ATTLIST textScriptClassificationLevel1
+ value (unknown|brahmi_and_derivatives|kharosthi|arabic_script|chinese_script) "unknown"
+  >
+  <!ELEMENT textScriptClassificationLevel2 EMPTY>
+  <!ATTLIST textScriptClassificationLevel2
+ value (unknown|northern_class_brahmi|southern_class_brahmi|southeast_asian_brahmi|jawi_script) "unknown"
+  >
+  <!ELEMENT textScriptClassificationLevel3 EMPTY>
+  <!ATTLIST textScriptClassificationLevel3
+ value (unknown|siddhamatrika|gaudi|nagari|tamil_script|grantha|vatteluttu|khmer_script|cam_script|mon-burmese_script|pyu_script|kawi_script|batak_script|balinese_script|sundanese_script|old_west_javanese_script) "unknown"
+  >
+  <!ELEMENT textScriptMaturity EMPTY>
+  <!ATTLIST textScriptMaturity
+ value (unknown|early_brahmi|middle_brahmi|late_brahmi|regional_brahmi-derived_script|vernacular_brahmi-derived_script) "unknown"
+  >
   <!ELEMENT textDate (dateRegnalYear,date,dateJovianCycle,origDate)>
     <!ELEMENT dateRegnalYear (ruler,year*,month*,fortnight*,day*,remark*)>
       <!ELEMENT ruler (#PCDATA)>
@@ -73,7 +97,10 @@
       <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>-->
     <!ELEMENT dateJovianCycle (cycleName,month,fortnight,day,remark)>
-      <!ELEMENT cycleName (#PCDATA)>
+      <!ELEMENT cycleName EMPTY>
+      <!<!ATTLIST cycleName
+      value (Prabhava|Vibhava|Sukla|Pramoda|Prajapati|Angirasa|Srimukha|Bhava|Yuvan|Dhatr|Isvara|Bahudhanya|Pramathin|Vikrama|Vrsa|Citrabhanu|Subhanu|Tarana|Parthiva|Vyaya|Sarvajit|Sarvadharin|Virodhin|Vikrta|Khara|Nandana|Vijaya|Jaya|Manmatha|Durmukha|Hemalamba|Vilamba|Vikarin|Sarvarin|Plava|Subhakrt|Sobhakrt|Krodhin|Visvavasu|Parabhava|Plavanga|Kilaka|Saumya|Sadharana|Virodhakrt|Paridhavin|Pramadica|Ananda|Raksasa|Anala/Nala|Pingala|Kalayukta|Siddharthin|Raudra|Durmati|Dundubhi|Rudhirodgarin|Raktaksa|Krodhana|Ksaya/Aksaya)
+      >
       <!--<!ELEMENT month (#PCDATA)>
       <!ELEMENT fortnight (#PCDATA)>
       <!ELEMENT day (#PCDATA)>-->
